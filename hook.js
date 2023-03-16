@@ -31,7 +31,7 @@ class Script {
         message += " on the repo " + "[" + projectName + "](https://github.com/" + repo + ")";
         message += " on " + commitDate + " and their commit message was,'" + commitMessage + "'\n"
         message += "Build details, build ID:" + buildId + ", build number:" + buildNumber + "\n"
-        message += "You can check the [Commit]((https://github.com/" + repo + "/commit/" + commitId + ")"
+        message += "You can check the [Commit](https://github.com/" + repo + "/commit/" + commitId + ")"
 
         const content = {
             "emoji": ":smiley:",
