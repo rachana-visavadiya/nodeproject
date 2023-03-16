@@ -15,15 +15,27 @@ class Script {
     process_incoming_request({ request }) {
         
         // console is a global helper to improve debug
-        console.log(request.content);
+        console.log("Incoming webhook");
+        console.log("------------------------------------------------");
+        let message = "";
+        const name = request.commitAuthor;
+        const authorEmail = request.commitAuthorEmail;
+        const commitDate = request.commitDate;
+        const commitMessage = request.commitMessage;
+        const repo = request.repositoryName;
+        const projectName = request.projectName;
+        message += "Commit by author:" + name + " whose email is " + authorEmail;
+        message += " on the repo " + "[" + projectName + "](https://github.com/" + repo + ")";
+        message += " on " + commitDate + " and their commit message was,'" + commitMessage + "'"
+
         const content = {
-            "emoji": ":smirk:",
-            "text": "Example message",
+            "emoji": ":smiley:",
+            "text": message,
             "attachments": [
                 {
-                    "title": "Rocket.Chat",
+                    "title": "Appveyor",
                     "title_link": "https://rocket.chat",
-                    "text": "Rocket.Chat, the best open source chat",
+                    "text": "Appveyor is a CI tool",
                     "image_url": "https://writing-demo.dev.rocket.chat/images/integration-attachment-example.png",
                     "color": "#764FA5"
                 }
@@ -33,12 +45,5 @@ class Script {
         return {
             content:content
         };
-
-        // return {
-        //   error: {
-        //     success: false,
-        //     message: 'Error example'
-        //   }
-        // };
     }
 }
