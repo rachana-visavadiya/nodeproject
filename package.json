@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm test",
+    "test": "echo:\"No test specified and\" so",
     "run": "node index.js"
   },
   "author": "Ngenge Senior",
