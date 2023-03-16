@@ -15,15 +15,16 @@ class Script {
     process_incoming_request({ request }) {
         
         // console is a global helper to improve debug
-        console.log("Incoming webhook");
         console.log("------------------------------------------------");
+        let reqContent = request.content;
+        console.log(JSON.stringify(reqContent));
         let message = "";
-        const name = request.commitAuthor;
-        const authorEmail = request.commitAuthorEmail;
-        const commitDate = request.commitDate;
-        const commitMessage = request.commitMessage;
-        const repo = request.repositoryName;
-        const projectName = request.projectName;
+        const name = reqContent.commitAuthor;
+        const authorEmail = reqContent.commitAuthorEmail;
+        const commitDate = reqContent.commitDate;
+        const commitMessage = reqContent.commitMessage;
+        const repo = reqContent.repositoryName;
+        const projectName = reqContent.projectName;
         message += "Commit by author:" + name + " whose email is " + authorEmail;
         message += " on the repo " + "[" + projectName + "](https://github.com/" + repo + ")";
         message += " on " + commitDate + " and their commit message was,'" + commitMessage + "'"
