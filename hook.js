@@ -13,17 +13,17 @@ class Script {
      * @params {object} request
      */
     process_incoming_request({ request }) {
-        let reqContent = request.content;
+        let requestContent = request.content;
         let message = "";
-        const name = reqContent.commitAuthor;
-        const authorEmail = reqContent.commitAuthorEmail;
-        const commitDate = reqContent.commitDate;
-        const commitMessage = reqContent.commitMessage;
-        const repo = reqContent.repositoryName;
-        const commitId = reqContent.commitId;
-        const projectName = reqContent.projectName;
-        const buildNumber = reqContent.buildNumber;
-        const buildId = reqContent.buildId;
+        const name = requestContent.commitAuthor;
+        const authorEmail = requestContent.commitAuthorEmail;
+        const commitDate = requestContent.commitDate;
+        const commitMessage = requestContent.commitMessage;
+        const repo = requestContent.repositoryName;
+        const commitId = requestContent.commitId;
+        const projectName = requestContent.projectName;
+        const buildNumber = requestContent.buildNumber;
+        const buildId = requestContent.buildId;
         message += "Commit by author:" + name + " whose email is " + authorEmail;
         message += " on the repo " + "[" + projectName + "](https://github.com/" + repo + ")";
         message += " on " + commitDate + " and their commit message was,'" + commitMessage + "'\n"
