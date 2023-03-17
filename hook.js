@@ -13,9 +13,6 @@ class Script {
      * @params {object} request
      */
     process_incoming_request({ request }) {
-        
-        // console is a global helper to improve debug
-
         let reqContent = request.content;
         let message = "";
         const name = reqContent.commitAuthor;
