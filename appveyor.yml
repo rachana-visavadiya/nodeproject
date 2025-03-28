@@ -20,5 +20,5 @@ test_script:
 build: off
 deploy:
   provider: Webhook
-  url: https://writing-demo.dev.rocket.chat/hooks/641343f128384134ed600d6f/oBNm8zm4XheG4HRuzxs5jFyHcnc5vpzZ7dWZLnkGKEh4v28S
+  url: https://writing-demo.dev.rocket.chat/hooks/67e649d1c81fc9317178ba50/og67BgMxstuQBAEHt6J8XDCs6yGtrFperRD5HkSdBtv8Y9QF
   request_timeout: 5
